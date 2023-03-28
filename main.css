@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-red: hsl(0, 100%, 67%);
+  --primary-red-back: hsla(0, 100%, 67%, 7%);
+  --primary-yellow: hsl(39, 100%, 56%);
+  --primary-green: hsl(166, 100%, 37%);
+  --primary-blue: hsl(234, 85%, 45%);
+  --white: hsl(0, 0%, 100%);
+  --secondary-blue: hsl(221, 100%, 96%);
+  --secondary-lavender: hsl(241, 100%, 89%);
+  --secondary-dark-blue: hsl(224, 30%, 27%);
+  --secondary-dark-blue-50: hsla(224, 30%, 27%, 50%);
+  --shadow: 0px 5px 20px 10px hsl(222, 100%, 96.1%);
+  --gradient-primary-color: hsl(252, 100%, 67%);
+  --gradient-second-color: hsl(241, 81%, 54%);
+  --gradient-circle-primary: hsla(256, 72%, 46%, 1);
+  --gradient-circle-second: hsla(241, 72%, 46%, 0);
+}
+
+@font-face {
+  font-family: FrontendMentor;
+  src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+body,
+button {
+  font-family: FrontendMentor;
+  font-size: 18px;
+}
+
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.wrapper-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.results-container {
+  width: 100%;
+  height: 355px;
+  background: linear-gradient(180deg, var(--gradient-primary-color) 0%, var(--gradient-second-color) 100%);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-heading {
+  padding: 20px 0;
+  color: var(--secondary-lavender);
+  font-weight: 700;
+}
+
+.result-info {
+  background: linear-gradient(180deg, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+  border-radius: 50%;
+  width: 135px;
+  height: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-percent {
+  font-size: 3.5rem;
+  color: var(--white);
+  font-weight: 800;
+}
+
+.result-max {
+  color: var(--secondary-lavender);
+}
+
+.result-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.result-opinion {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.result-desc {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--secondary-lavender);
+  padding: 10px 55px;
+}
+
+.results-summary-container {
+  padding: 30px;
+}
+
+.results-summary-heading {
+  color: var(--secondary-dark-blue);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.results-summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.results-summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--primary-red-back);
+  color: var(--primary-red);
+}
+
+.results-summary-type {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+
+.results-summary-percent-container {
+  display: flex;
+  font-weight: 700;
+  font-size: 1.05rem;
+  gap: 0px 6px;
+  color: var(--secondary-dark-blue-50);
+}
+
+.results-summary-percent {
+  color: var(--secondary-dark-blue);
+}
+
+.results-summary-item:nth-child(2) {
+  color: var(--primary-yellow);
+}
+
+.results-summary-item:nth-child(3) {
+  color: var(--primary-green);
+}
+
+.results-summary-item:nth-child(4) {
+  color: var(--primary-blue);
+}
+
+.results-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.results-btn button {
+  border: none;
+  width: 100%;
+  height: 60px;
+  font-weight: 700;
+  border-radius: 40px;
+  background: var(--secondary-dark-blue);
+  color: var(--white);
+}
+
+.results-btn button:hover,
+.results-btn button:focus {
+  background: linear-gradient(180deg, #7857ff 0%, #2e2be9 100%);
+  cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+  .attribution {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper-container {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: 30px;
+  }
+
+  .results-container,
+  .results-summary-container {
+    border-radius: 30px;
+    width: 365px;
+    height: 512px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .results-summary-heading {
+    font-size: 1.5rem;
+  }
+
+  .result-heading {
+    font-size: 1.5rem;
+  }
+
+  .result-info {
+    width: 180px;
+    height: 180px;
+  }
+
+  .result-percent {
+    font-size: 5rem;
+  }
+
+  .result-opinion {
+    font-size: 1.8rem;
+  }
+
+  .result-desc {
+    font-size: 1.05rem;
+  }
+}
