@@ -2,10 +2,10 @@ fetch("data.json")
   .then((response) => response.json())
   .then((data) => {
     const list = document.querySelector(".results-summary-info");
-    let out = "";
+    let items = "";
     data.forEach((item) => {
       const li = document.createElement("li");
-      out += `
+      items += `
       <div class="results-summary-item">
         <div class="results-summary-type"><img src='${item.icon}' alt="" />${item.category}</div>
             <div class="results-summary-percent-container">
@@ -16,6 +16,6 @@ fetch("data.json")
        </div>
       `;
     });
-    list.innerHTML = out;
+    list.innerHTML = items;
   })
   .catch((error) => console.error(error));
